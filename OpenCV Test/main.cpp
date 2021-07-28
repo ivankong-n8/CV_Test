@@ -1,5 +1,15 @@
 #include "HistBalanceApi.h"
 #include "AlgoHeader.hpp"
+#include "FindContour.h"
+
+
+void show_test_img(string name,Mat img)
+{
+	cv::namedWindow(name, WINDOW_NORMAL);
+	cv::imshow(name, img);
+	cv::waitKey();
+	cv::destroyWindow(name);
+}
 
 int test_img_copy() {
 
@@ -65,9 +75,21 @@ int test_erode_withDirection() {
 	return 0;
 }
 
+int test_find_local_edge() {
+	Mat gray = imread("C:/Users/Ivan/Dev/Gitee/ASL-Algorithm dynamic library/TestAlgorithm/Test/20210728 - 实际样品缺陷提取图/H/4_1_H_S_W4_L20.bmp");
+	int minThre, maxThre;
+	Mat output;
+	GetMatMinMaxThreshold(gray, minThre, maxThre, 1);
+	Canny(gray, output, minThre, maxThre);
+
+
+	show_test_img("output", output);
+	return 0;
+}
+
 void main() {
 	//test_img_copy();
-	test_erode_withDirection();
-
+	//test_erode_withDirection();
+	test_find_local_edge();
 }
 

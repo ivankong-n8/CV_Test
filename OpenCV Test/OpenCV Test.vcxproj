@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AlgoHeader.cpp" />
+    <ClCompile Include="FindContour.cpp" />
     <ClCompile Include="HistBalance.cpp" />
     <ClCompile Include="HistBalanceApi.cpp" />
     <ClCompile Include="main.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="AlgoHeader.hpp" />
     <ClInclude Include="HistBalanceApi.h" />
     <ClInclude Include="basic.h" />
+    <ClInclude Include="FindContour.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
